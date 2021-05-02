@@ -7,6 +7,7 @@ require (
 	github.com/mitchellh/go-ps v1.0.0 // indirect
 	github.com/pokt-network/pocket-core v0.0.0-20210429190449-f794bc74b167
 	github.com/tendermint/go-amino v0.15.0 // indirect
+	github.com/jinzhu/now v1.1.2 // indirect
 	github.com/tendermint/tendermint v0.33.7
 )
 
