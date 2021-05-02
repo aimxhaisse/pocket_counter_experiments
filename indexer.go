@@ -419,8 +419,8 @@ func GetTargetTimes(config Config, latestTime time.Time, unit time.Duration) (ta
 
 func GetClosestHeights(latestHeight int64, targetStartTime, latestBlockTime, targetEndTime time.Time, config Config) (startHeight, endHeight int64) {
 	log.Println("Begin Closest Height Operations")
-	appxStartHeight := latestHeight - int64(latestBlockTime.Sub(targetStartTime).Minutes()/15)
-	appxEndHeight := latestHeight - int64(latestBlockTime.Sub(targetEndTime).Minutes()/15)
+	appxStartHeight := int64(math.Max(1.0, float64(latestHeight - int64(latestBlockTime.Sub(targetStartTime).Minutes()/15))))
+	appxEndHeight := int64(math.Max(1.0, float64(latestHeight - int64(latestBlockTime.Sub(targetEndTime).Minutes()/15))))
 	startHeight = BlockBinarySearch(targetStartTime, latestHeight, appxStartHeight, config)
 	log.Printf("Closest Start Height Found: %d\n", startHeight)
 	endHeight = BlockBinarySearch(targetEndTime, latestHeight, appxEndHeight, config)

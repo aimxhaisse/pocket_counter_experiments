@@ -9,7 +9,7 @@
     "start": 0,
     "end": 0
   },
-  "endpoint": "http://localhost:8081/v1",
+  "endpoint": "https://pocket-full.ba2s.skillz.io/v1",
   "http_retry": 3,
   "params": {
     "blocks_per_session": 4,
